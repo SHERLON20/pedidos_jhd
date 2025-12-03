@@ -1,3 +1,0 @@
-flet == 28.0.3
-flet_desktop==28.0.3
-psycopg2==2.9.11
