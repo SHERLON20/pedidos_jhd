@@ -1,8 +1,8 @@
 import flet as ft
 import psycopg2
 from time import sleep
-import requests
 def main(page:ft.Page):
+    page.theme_mode = ft.ThemeMode.LIGHT
     conn = psycopg2.connect(
             host="dpg-d4nkrk15pdvs73cpfgq0-a.oregon-postgres.render.com",  # ou o IP do servidor
             port="5432",       # porta padrão do PostgreSQL
@@ -475,6 +475,7 @@ def main(page:ft.Page):
     )
     tela_pedido = ft.Container(
         padding=ft.padding.only(left=10,right=10,bottom=5,top=0),
+        expand=True,
         content=ft.Column(
             controls=[
                 topo,
@@ -482,7 +483,7 @@ def main(page:ft.Page):
                 lista_pedido,
                 total,
                 botoes
-            ]
+            ],scroll=ft.ScrollMode.AUTO
         )
     )
     page.add(tela_pedido)
@@ -539,4 +540,5 @@ def main(page:ft.Page):
                 lista_pedido.update()
                 sleep(10)
 if __name__ == "__main__":
+
     ft.app(target=main,assets_dir='assets')
