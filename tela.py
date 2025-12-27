@@ -145,6 +145,12 @@ def main(page:ft.Page):
                                     total.spans[1].text -= numero_valor
                                     total.update()
                                     break
+                    else:
+                            for item in lista_pedido.content.controls:
+                                if item.data == id_d:
+                                    lista_pedido.content.controls.remove(item)
+                                    lista_pedido.update()
+                                    break
         tela_delete = ft.AlertDialog(
             open=True,
             content_padding=ft.padding.only(bottom=-2,top=10,left=20,right=10),
@@ -542,3 +548,4 @@ def main(page:ft.Page):
 if __name__ == "__main__":
 
     ft.app(target=main,assets_dir='assets')
+
