@@ -4,12 +4,12 @@ from time import sleep
 def main(page:ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     conn = psycopg2.connect(
-            host="dpg-d4nkrk15pdvs73cpfgq0-a.oregon-postgres.render.com",,  # ou o IP do servidor
-            port="5432",       # porta padrão do PostgreSQL
-            database="bd_sherlon_ulac",  # nome do seu banco de dados
-            user="bd_sherlon_ulac_user",
-            password="synMXbst2UAOQJQJMWKNvUlRFHSGnfBd"
-        )
+                            host="dpg-d57jh96uk2gs73d3dbk0-a.oregon-postgres.render.com",
+                            port="5432",
+                            database="bd_sherlon_ulac",
+                            user="bd_sherlon_ulac_user",
+                            password="synMXbst2UAOQJQJMWKNvUlRFHSGnfBd"
+                        )
     def consulta(sql):
         # Parâmetros de conexão (substitua pelos seus valores)
         
@@ -548,5 +548,6 @@ def main(page:ft.Page):
 if __name__ == "__main__":
 
     ft.app(target=main,assets_dir='assets')
+
 
 
